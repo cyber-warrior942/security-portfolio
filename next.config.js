@@ -12,10 +12,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   experimental: {
-    turbo: false
+    optimizePackageImports: ['@vercel/analytics', 'framer-motion', 'react-icons'],
   },
   webpack: (config) => {
-    config.resolve.fallback = { fs: false };
+    config.resolve.fallback = { fs: false, path: false };
     return config;
   }
 }
