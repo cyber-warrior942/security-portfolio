@@ -17,7 +17,16 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.fallback = { fs: false, path: false };
     return config;
-  }
+  },
+  output: 'export'  // Required for Netlify static deployment
 }
 
-module.exports = nextConfig 
+module.exports = {
+  // Other Next.js configurations
+  // ...
+
+  // Configure external dependencies
+  externals: {
+    tailwindcss: 'tailwindcss',
+  },
+};
