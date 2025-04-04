@@ -11,6 +11,13 @@ const nextConfig = {
     // your project has type errors.
     ignoreBuildErrors: true,
   },
+  experimental: {
+    turbo: false
+  },
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
+  }
 }
 
 module.exports = nextConfig 
